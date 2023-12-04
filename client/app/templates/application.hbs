@@ -1,0 +1,80 @@
+{{page-title "Rune"}}
+
+<BsNavbar @type="dark" @backgroundColor="dark" as |navbar|>
+  <LinkTo @route="index" class="navbar-brand">
+    <img src="/images/logo.png" width=45 class="mb-1"/>
+    Rune
+  </LinkTo>
+  <navbar.toggle />
+  <navbar.content>
+    <navbar.nav class="mx-auto" style="flex: 1;" as |nav|>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <Input class="form-control" @type="text"/>
+          </div>
+        </div>
+      </div>
+    </navbar.nav>
+    <navbar.nav class="ms-auto" as |nav|>
+      <nav.item>
+        <a 
+          class="nav-link" 
+          target="_Blank" 
+          href="https://github.com/dcharles525"
+        >
+          GitHub <FaIcon @icon="github" @prefix="fab"/>
+        </a>
+      </nav.item>
+    </navbar.nav>
+  </navbar.content>
+</BsNavbar>
+<div class="mb-5"></div>
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="card p-5 mb-10">
+        <div class="d-flex">
+          <div class="item-background-color-base p-5">
+            <img src="/images/item.png" class="image-width" />
+          </div>
+          <div class="ps-5">
+            <h1 class="mb-5">Item Name</h1>
+            <h3 class="mb-5">
+              Item Description. Lorem ipsum dolor sit amet, consectetur 
+              adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+              et dolore magna aliqua. 
+            </h3>
+            <h5>Current Price: $5</h5>
+            <h5>Todays Price: $10</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
+<div class="mt-5 mb-5"></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <EmberChart
+        @type="line"
+        @data={{this.testData}} 
+        @options={{this.testOptions}}
+        @width={{1000}} 
+        @height={{500}} 
+      />
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
+<div class="mb-5"></div>
+<footer class="text-center text-lg-start fixed-bottom">
+  <div class="text-center p-3">
+    Built in Soda City <FaIcon @icon="whiskey-glass"/>
+  </div>
+</footer>
+{{outlet}}
